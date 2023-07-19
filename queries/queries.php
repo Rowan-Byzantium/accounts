@@ -6,7 +6,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 if (
-    !array_key_exists('token', $_SESSION)
+    !array_key_exists('token', $_SESSION) 
 ) {
     echo 'error CSRF';
 } else {
