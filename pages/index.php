@@ -4,11 +4,12 @@
 // session_start();
 // $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
-require "../queries/queries.php";
+require "../queries/_display.php";
 require "../_functions.php";
+require "../queries/_total.php";
 
-var_dump(getTotal($transactions));
-exit;
+// var_dump($total);
+// exit;
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +65,7 @@ exit;
                 <h2 class="my-0 fw-normal fs-4">Solde aujourd'hui</h2>
             </div>
             <div class="card-body">
-                <p class="card-title pricing-card-title text-center fs-1"><?=getTotal($transactions)?>€</p>
+                <p class="card-title pricing-card-title text-center fs-1"><?=$total['total']?>€</p>
             </div>
         </section>
 
@@ -84,7 +85,7 @@ exit;
                     <tbody>
                     <?=displayList($transactions)?>
             </div>
-            <div class="card-footer">
+            <!-- <div class="card-footer">
                 <nav class="text-center">
                     <ul class="pagination d-flex justify-content-center m-2">
                         <li class="page-item disabled">
@@ -108,7 +109,7 @@ exit;
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </div> -->
         </section>
     </div>
 

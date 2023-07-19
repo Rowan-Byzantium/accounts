@@ -10,7 +10,8 @@ if (
 ) {
     echo 'error CSRF';
 } else {
-        $query = $dbCo->prepare("SELECT name, amount, date_transaction AS date, YEAR(date_transaction), MONTH(date_transaction), id_category FROM transaction
+        $query = $dbCo->prepare("SELECT name, amount, date_transaction AS date, YEAR(date_transaction), MONTH(date_transaction), icon_class AS icon FROM transaction
+        JOIN category USING (id_category)
         WHERE YEAR(date_transaction) = :currentyear AND MONTH(date_transaction) = :currentmonth
         ORDER BY date_transaction DESC");
         $isOk = $query->execute([
