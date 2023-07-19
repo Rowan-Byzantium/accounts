@@ -2,7 +2,7 @@
 
 require "_db-connect.php";
 
-$query = $dbCo->prepare("SELECT name, amount, date_transaction AS date, icon_class AS icon FROM transaction
+$query = $dbCo->prepare("SELECT name, amount, date_transaction AS date, icon_class AS icon, id_transaction AS id FROM transaction
         LEFT JOIN category USING (id_category)
         WHERE YEAR(date_transaction) = :currentyear AND MONTH(date_transaction) = :currentmonth
         ORDER BY date_transaction DESC");

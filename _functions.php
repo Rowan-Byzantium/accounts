@@ -1,4 +1,13 @@
 <?php
+
+
+    /**
+     *  a function used to display an HTML string already styled from an array
+     *
+     * @param [type] $array --the array who will be displayed as a list 
+     * @return array
+     */
+
     function displayList($array){
         $ta = '<tr>';
         foreach ($array as $transaction){
@@ -31,14 +40,14 @@
             '</span>
             </td>
             <td class="text-end text-nowrap">
-            <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">
+            <a href="../queries/edit.php?id='. $transaction['id'] .'" class="btn btn-outline-primary btn-sm rounded-circle">
                 <i class="bi bi-pencil"></i>
             </a>
-            <a href="#" class="btn btn-outline-danger btn-sm rounded-circle">
+            <a href="../queries/delete.php?id='. $transaction['id'] .'" class="btn btn-outline-danger btn-sm rounded-circle">
                 <i class="bi bi-trash"></i>
             </a>
             </td>
             </tr>';
     }; 
-    echo $ta;
+    return $ta;
 };
