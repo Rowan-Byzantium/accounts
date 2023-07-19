@@ -10,10 +10,11 @@ if (
 ) {
     echo 'error CSRF';
 } else {
-        $query = $dbCo->prepare("SELECT name, amount, date_transaction, id_category FROM transaction
-        ORDER BY date_transaction DESC");
+        $query = $dbCo->prepare("SELECT name, amount, date_transaction AS date, id_category FROM transaction
+        ORDER BY date_transaction DESC
+        LIMIT 10");
         $isOk = $query->execute();
         $transactions = $query->fetchAll();
-        var_dump($transactions);
+        return $transactions;
 }
 

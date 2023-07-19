@@ -1,11 +1,11 @@
 <?php
 
 
-session_start();
-$_SESSION['token'] = md5(uniqid(mt_rand(), true));
+// session_start();
+// $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
 require "../queries/queries.php";
-exit;
+require "../_functions.php";
 
 ?>
 
@@ -80,7 +80,8 @@ exit;
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                    <?=$ta?>
+                        <!-- <tr>
                             <td width="50" class="ps-3">
                             </td>
                             <td>
@@ -127,7 +128,7 @@ exit;
                             <td width="50" class="ps-3">
                             </td>
                             <td>
-                                <time datetime="2023-07-08" class="d-block fst-italic fw-light">8/07/2023</time>
+                                <time datetime="2023-07-08" class="d-block fst-italic fw-light">8 j /07/2023</time>
                                 Facture électricité
                             </td>
                             <td class="text-end">
@@ -171,7 +172,7 @@ exit;
                                 <i class="bi bi-train-front fs-3"></i>
                             </td>
                             <td>
-                                <time datetime="2023-07-02" class="d-block fst-italic fw-light">2/07/2023</time>
+                                <time datetime="2023-07-02" class="d-block fst-italic fw-light">2 j / 07 m /2023 Y</time>
                                 Billets de train Lille
                             </td>
                             <td class="text-end">
@@ -211,7 +212,7 @@ exit;
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
             </div>
             <div class="card-footer">
                 <nav class="text-center">
