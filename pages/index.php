@@ -10,6 +10,11 @@ require "../queries/_total.php";
 
 // var_dump($total);
 // exit;
+
+if(array_key_exists('ok', $_GET) && $_GET['ok']){
+    echo $_GET['ok'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +119,7 @@ require "../queries/_total.php";
     </div>
 
     <div class="position-fixed bottom-0 end-0 m-3">
-        <a href="add.html" class="btn btn-primary btn-lg rounded-circle">
+        <a href="add.php" class="btn btn-primary btn-lg rounded-circle">
             <i class="bi bi-plus fs-1"></i>
         </a>
     </div>

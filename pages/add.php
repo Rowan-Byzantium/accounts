@@ -1,20 +1,3 @@
-<?php
-
-
-
-session_start();
-
-
-
-
-
-
-
-
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -52,8 +35,7 @@ session_start();
             </nav>
             <form action="" class="col-12 col-md-4" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher..."
-                        aria-describedby="button-search">
+                    <input type="text" class="form-control" placeholder="Rechercher..." aria-describedby="button-search">
                     <button class="btn btn-primary" type="submit" id="button-search">
                         <i class="bi bi-search"></i>
                     </button>
@@ -68,11 +50,11 @@ session_start();
                 <h1 class="my-0 fw-normal fs-4">Ajouter une opération</h1>
             </div>
             <div class="card-body">
-                <form>
+                <form action="../queries/_add.php" method ="post">
+                    <!-- <input type="hidden" name="token" value="<?=$_SESSION['token']?>"> -->
                     <div class="mb-3">
                         <label for="name" class="form-label">Nom de l'opération *</label>
-                        <input type="text" class="form-control" name="name" id="name"
-                            placeholder="Facture d'électricité" required>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Facture d'électricité" required>
                     </div>
                     <div class="mb-3">
                         <label for="date" class="form-label">Date *</label>
@@ -90,13 +72,15 @@ session_start();
                         <label for="category" class="form-label">Catégorie</label>
                         <select class="form-select" name="category" id="category">
                             <option value="" selected>Aucune catégorie</option>
-                            <option value="1">Nourriture</option>
-                            <option value="2">Loisir</option>
-                            <option value="3">Travail</option>
-                            <option value="4">Voyage</option>
-                            <option value="5">Sport</option>
-                            <option value="6">Habitat</option>
-                            <option value="7">Cadeaux</option>
+                            <option value="1">Habitation</option>
+                            <option value="2">Travail</option>
+                            <option value="3">Cadeau</option>
+                            <option value="4">Numérique</option>
+                            <option value="5">Alimentation</option>
+                            <option value="6">Voyage</option>
+                            <option value="7">Loisir</option>
+                            <option value="8">Voiture</option>
+                            <option value="9">Santé</option>
                         </select>
                     </div>
                     <div class="text-center">
