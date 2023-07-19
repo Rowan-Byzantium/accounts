@@ -1,7 +1,7 @@
 <?php
-    // function displayList($array){
+    function displayList($array){
     $ta = "<tr>";
-    foreach ($transactions as $transaction){
+    foreach ($array as $transaction){
     $ta .= '<td width="50" class="ps-3"></td> 
         <td>
             <time datetime="' . $transaction['date'] . '" class="d-block fst-italic fw-light">' . date_format(new DateTime($transaction['date']), 'j/m/Y') . '</time>'.
@@ -22,5 +22,19 @@
         </td>
     </tr>';
     }; 
-// }
+    echo $ta;
+};
     // <i class="bi bi-car-front fs-3"></i>
+
+function getTotal($array){ 
+    foreach ($array as $transaction){
+        if ($total = 0){
+            $total;
+        }
+        
+        // var_dump($transaction['amount']));
+        $total = intval($total) + intval($transaction['amount']);
+        var_dump($total);
+    }
+    // return number_format($total); 
+}
