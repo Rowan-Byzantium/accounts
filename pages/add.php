@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+    $_SESSION['myToken'] = md5(uniqid(mt_rand(), true));
+}
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,7 +58,7 @@
             </div>
             <div class="card-body">
                 <form action="../queries/_add.php" method ="post">
-                    <!-- <input type="hidden" name="token" value="<?=$_SESSION['token']?>"> -->
+                    <input type="hidden" name="token" value="<?=$_SESSION['token']?>">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nom de l'opération *</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Facture d'électricité" required>

@@ -42,16 +42,3 @@
     }; 
     echo $ta;
 };
-
-// function getTotal($array){ 
-//     foreach ($array as $transaction){
-//         if ($total = 0){
-//             $total;
-//         }
-        
-//         // var_dump($transaction['amount']));
-//         $total = intval($total) + intval($transaction['amount']);
-//         var_dump($total);
-//     }
-//     // return number_format($total); 
-// }

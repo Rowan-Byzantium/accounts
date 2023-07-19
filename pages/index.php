@@ -11,10 +11,6 @@ require "../queries/_total.php";
 // var_dump($total);
 // exit;
 
-if(array_key_exists('ok', $_GET) && $_GET['ok']){
-    echo $_GET['ok'];
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +50,7 @@ if(array_key_exists('ok', $_GET) && $_GET['ok']){
             </nav>
             <form action="" class="col-12 col-md-4" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher..."
-                        aria-describedby="button-search">
+                    <input type="text" class="form-control" placeholder="Rechercher..." aria-describedby="button-search">
                     <button class="btn btn-primary" type="submit" id="button-search">
                         <i class="bi bi-search"></i>
                     </button>
@@ -63,17 +58,20 @@ if(array_key_exists('ok', $_GET) && $_GET['ok']){
             </form>
         </header>
     </div>
-
     <div class="container">
         <section class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
                 <h2 class="my-0 fw-normal fs-4">Solde aujourd'hui</h2>
             </div>
             <div class="card-body">
-                <p class="card-title pricing-card-title text-center fs-1"><?=$total['total']?>€</p>
+                <p class="card-title pricing-card-title text-center fs-1"><?= $total['total'] ?>€</p>
             </div>
         </section>
-
+        <?php
+        if (array_key_exists('ok', $_GET) && $_GET['ok']) {
+            echo $_GET['ok'];
+        }
+        ?>
         <section class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
                 <h1 class="my-0 fw-normal fs-4">Opérations de Juillet 2023</h1>
@@ -88,9 +86,11 @@ if(array_key_exists('ok', $_GET) && $_GET['ok']){
                         </tr>
                     </thead>
                     <tbody>
-                    <?=displayList($transactions)?>
+                        <?= displayList($transactions) ?>
+                    </tbody>
+                </table>
             </div>
-            <!-- <div class="card-footer">
+            <div class="card-footer">
                 <nav class="text-center">
                     <ul class="pagination d-flex justify-content-center m-2">
                         <li class="page-item disabled">
@@ -114,7 +114,7 @@ if(array_key_exists('ok', $_GET) && $_GET['ok']){
                         </li>
                     </ul>
                 </nav>
-            </div> -->
+            </div>
         </section>
     </div>
 
